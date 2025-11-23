@@ -1,0 +1,15 @@
+{
+  "short_name": "Wealthfolio",
+  "name": "Wealthfolio",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "258x258",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "black",
+  "background_color": "black"
+}
