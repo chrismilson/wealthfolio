@@ -1,0 +1,22 @@
+name: Container Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build and publish Container Image to GitHub Container Registry
+      uses: TCPShield/gp-docker-action@65486288374aeae8705fc543405dc4d23de6060b
+      with:
+        # Github username to push Docker image from
+        github-username: ${{ github.repository_owner }}
+        # GitHub token to push Docker image to GitHub Container Registry
+        github-token: ${{ github.token }}
+        # Dockerfile name
+        dockerfile: Dockerfile
