@@ -56,8 +56,8 @@ RUN --mount=type=cache,target=/var/cache/apk \
 RUN rustup target add $(xx-cargo --print-target-triple)
 
 COPY --parents src-server src-core .
-RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    --mount=type=cache,target=/usr/local/cargo/git/db \
+RUN --mount=type=cache,target=/usr/local/cargo/registry,sharing=locked \
+    --mount=type=cache,target=/usr/local/cargo/git/db,sharing=locked \
     --mount=type=cache,target=/app/src-server/target \
     xx-cargo fetch --manifest-path src-server/Cargo.toml && \
     xx-cargo build --release --manifest-path src-server/Cargo.toml && \
