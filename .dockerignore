@@ -30,3 +30,7 @@ tmp
 # OS/editor files
 .DS_Store
 Thumbs.db
+
+# Docker files
+Dockerfile
+.dockerignore
